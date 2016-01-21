@@ -2,7 +2,7 @@
   "policy" : {
     "id" : null,
     "name" : "Elevated Process Count",
-    "description" : null,
+    "description" : "Indicates that the total number of processes has increased above what is considered to be normal.",
     "scope" : {
       "elementName" : "",
       "elementType" : "SERVER",
@@ -19,8 +19,12 @@
     "actions" : [ {
       "type" : "event",
       "category" : 1
+    }, {
+      "type" : "notification",
+      "id" : 23513,
+      "enabled" : true
     } ],
-    "enabled" : false,
+    "enabled" : true,
     "deleted" : false,
     "originTenantId" : null,
     "originPolicyId" : null,

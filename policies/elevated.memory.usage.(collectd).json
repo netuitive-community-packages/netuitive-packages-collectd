@@ -2,7 +2,7 @@
   "policy" : {
     "id" : null,
     "name" : "Elevated Memory Usage (Collectd)",
-    "description" : null,
+    "description" : "Indicates an increase in memory usage above what is considered to be normal.",
     "scope" : {
       "elementName" : "",
       "elementType" : "SERVER",
@@ -15,12 +15,22 @@
       "analytic" : "baselineDeviation",
       "operator" : ">",
       "level" : null
+    }, {
+      "metric" : "netuitive.collectd.memory.utilizationpercent",
+      "wildcard" : null,
+      "analytic" : "actual",
+      "operator" : ">",
+      "level" : 50.0
     } ],
     "actions" : [ {
       "type" : "event",
       "category" : 1
+    }, {
+      "type" : "notification",
+      "id" : 23513,
+      "enabled" : true
     } ],
-    "enabled" : false,
+    "enabled" : true,
     "deleted" : false,
     "originTenantId" : null,
     "originPolicyId" : null,

@@ -2,7 +2,7 @@
   "policy" : {
     "id" : null,
     "name" : "Elevated Percentage of Zombie Processes",
-    "description" : null,
+    "description" : "Indicates a higher-than-normal percentage of zombie processes.",
     "scope" : {
       "elementName" : "",
       "elementType" : "SERVER",
@@ -19,8 +19,12 @@
     "actions" : [ {
       "type" : "event",
       "category" : 2
+    }, {
+      "type" : "notification",
+      "id" : 23513,
+      "enabled" : true
     } ],
-    "enabled" : false,
+    "enabled" : true,
     "deleted" : false,
     "originTenantId" : null,
     "originPolicyId" : null,
