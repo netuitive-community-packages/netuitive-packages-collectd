@@ -1,7 +1,7 @@
 {
   "policy" : {
     "id" : null,
-    "name" : "Elevated Memory Usage (Collectd)",
+    "name" : "Collectd - Elevated Memory Usage",
     "description" : "Indicates an increase in memory usage above what is considered to be normal.",
     "scope" : {
       "elementName" : "",

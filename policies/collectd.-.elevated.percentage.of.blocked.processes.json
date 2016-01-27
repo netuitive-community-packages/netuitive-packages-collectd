@@ -1,8 +1,8 @@
 {
   "policy" : {
     "id" : null,
-    "name" : "Elevated Percentage of Zombie Processes",
-    "description" : "Indicates a higher-than-normal percentage of zombie processes.",
+    "name" : "Collectd - Elevated Percentage of Blocked Processes",
+    "description" : "Indicates a higher-than-normal percentage of blocked processes.",
     "scope" : {
       "elementName" : "",
       "elementType" : "SERVER",
@@ -10,7 +10,7 @@
     },
     "duration" : 1800,
     "conditions" : [ {
-      "metric" : "netuitive.collectd.processes.zombiepercent",
+      "metric" : "netuitive.collectd.processes.blockedpercent",
       "wildcard" : null,
       "analytic" : "baselineDeviation",
       "operator" : ">",

@@ -1,7 +1,7 @@
 {
   "policy" : {
     "id" : null,
-    "name" : "Elevated Process Count",
+    "name" : "Collectd - Elevated Process Count",
     "description" : "Indicates that the total number of processes has increased above what is considered to be normal.",
     "scope" : {
       "elementName" : "",

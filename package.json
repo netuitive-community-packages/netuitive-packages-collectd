@@ -18,25 +18,25 @@
   },
   "policies" : [ {
     "data" : {
-      "file" : "policies/elevated.memory.usage.(collectd).json",
+      "file" : "policies/collectd.-.elevated.memory.usage.json",
       "encoding" : "application/json",
       "content" : null
     }
   }, {
     "data" : {
-      "file" : "policies/elevated.percentage.of.blocked.processes.json",
+      "file" : "policies/collectd.-.elevated.percentage.of.blocked.processes.json",
       "encoding" : "application/json",
       "content" : null
     }
   }, {
     "data" : {
-      "file" : "policies/elevated.percentage.of.zombie.processes.json",
+      "file" : "policies/collectd.-.elevated.percentage.of.zombie.processes.json",
       "encoding" : "application/json",
       "content" : null
     }
   }, {
     "data" : {
-      "file" : "policies/elevated.process.count.json",
+      "file" : "policies/collectd.-.elevated.process.count.json",
       "encoding" : "application/json",
       "content" : null
     }
