@@ -1,5 +1,4 @@
-netuitive.packages.collectd 1.0.0
-----------------------
+#netuitive.packages.collectd 1.0.0
 
 **Default Plugins**
 The following are the Collectd plugins that we assume Netuitive customers will use by default.
@@ -14,3 +13,11 @@ The following are the Collectd plugins that we assume Netuitive customers will u
  - **Uptime** - keeps track of the system uptime
 
 Additional plugins may be enabled; policies and configurations for those plugins will be packaged separately as they become available.
+
+For detailed information on this package, please refer to the [online documentation](https://help.app.netuitive.com/Content/Misc/Datasources/new_collectd_datasource.htm).
+
+##Release History
+
+###Version 1.0.0
+
+* Initial production release of the package for monitoring OS metrics from Collectd.
