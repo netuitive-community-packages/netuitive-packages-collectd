@@ -8,14 +8,12 @@
     "scope" : {
       "elementName" : null,
       "elementType" : "SERVER",
-      "elementTags" : null
+      "elementTags" : null,
+      "metricMatches" : "(^cpu|^memory)\\..*\\.value$"
     },
     "metrics" : [ {
       "match" : "netuitive.collectd.df-.*\\.used-percent",
       "properties" : {
-        "tags" : {
-          "utilization" : true
-        },
         "validMax" : 100
       }
     }, {
@@ -51,9 +49,6 @@
     }, {
       "match" : "netuitive.collectd.disk-.*\\.disk_busy.percent",
       "properties" : {
-        "tags" : {
-          "utilization" : true
-        },
         "validMax" : 100
       }
     }, {

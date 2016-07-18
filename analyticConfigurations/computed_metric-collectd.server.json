@@ -8,7 +8,8 @@
     "scope" : {
       "elementName" : null,
       "elementType" : "SERVER",
-      "elementTags" : null
+      "elementTags" : null,
+      "metricMatches" : "(^cpu|^memory)\\..*\\.value$"
     },
     "metrics" : [ {
       "match" : "netuitive.collectd.memory.total",
