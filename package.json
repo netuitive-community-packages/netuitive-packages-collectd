@@ -1,6 +1,6 @@
 {
   "id" : "netuitive.packages.collectd",
-  "version" : "1.1.0",
+  "version" : "1.1.1",
   "manifest" : {
     "name" : "Netuitive Packages Collectd",
     "description" : "A set of Netuitive analytics configurations, polices, dashboards, and reports that are used to monitor performance of a default set of plugins from Collectd (CPU, DF, Disk, Interface, Load, Memory, Processes, Uptime)",
@@ -12,7 +12,7 @@
       "logo" : "http://assets.app.netuitive.com/pkg/logo/netuitive/banner_logo.png",
       "download" : "https://github.com/netuitive-community-packages/netuitive-packages-collectd/archive/master.zip"
     },
-    "compatibility" : [ "COLLECTD" ],
+    "compatibility" : [ "COLLECTD:COLLECTD" ],
     "tags" : [ ],
     "checksum" : null
   },
