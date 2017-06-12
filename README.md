@@ -1,4 +1,4 @@
-#netuitive.packages.collectd 1.1.1
+# netuitive.packages.collectd 1.1.1
 
 **Default Plugins**
 The following are the Collectd plugins that we assume Netuitive customers will use by default.
@@ -16,16 +16,16 @@ Additional plugins may be enabled; policies and configurations for those plugins
 
 For detailed information on this package, please refer to the [online documentation](https://help.netuitive.com/Content/Integrations/collectd.htm).
 
-##Release History
+## Release History
 
-###Version 1.1.1
+### Version 1.1.1
 
 * Updated package compatibilities.
 
-###Version 1.1.0
+### Version 1.1.0
 
 * Removed utilization tag from individual disk metrics.
 
-###Version 1.0.0
+### Version 1.0.0
 
 * Initial production release of the package for monitoring OS metrics from Collectd.
