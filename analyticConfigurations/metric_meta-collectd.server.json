@@ -1,66 +1,71 @@
 {
-  "analyticConfiguration" : {
-    "tenantId" : null,
-    "type" : "METRIC_META",
-    "id" : null,
-    "packageId" : null,
-    "name" : "Collectd SERVER",
-    "scope" : {
-      "elementName" : null,
-      "elementType" : "SERVER",
-      "elementTags" : null,
-      "metricMatches" : "(^cpu|^memory)\\..*\\.value$"
-    },
-    "metrics" : [ {
-      "match" : "netuitive.collectd.df-.*\\.used-percent",
-      "properties" : {
-        "validMax" : 100
-      }
-    }, {
-      "match" : "netuitive.collectd.cpu-avg.cpu-user.percent",
-      "properties" : {
-        "tags" : {
-          "utilization" : true
+  "analyticConfiguration": {
+    "metrics": [
+      {
+        "match": "netuitive.collectd.df-.*\\.used-percent",
+        "properties": {
+          "validMax": 100
+        }
+      },
+      {
+        "match": "netuitive.collectd.cpu-avg.cpu-user.percent",
+        "properties": {
+          "tags": {
+            "utilization": true
+          }
+        }
+      },
+      {
+        "match": "netuitive.collectd.memory.utilizationpercent",
+        "properties": {
+          "tags": {
+            "utilization": true
+          },
+          "validMax": 100
+        }
+      },
+      {
+        "match": "uptime.uptime.value",
+        "properties": {
+          "STATISTIC": "sum"
+        }
+      },
+      {
+        "match": "netuitive.collectd.disk-*.disk_ops.total",
+        "properties": {
+          "STATISTIC": "sum"
+        }
+      },
+      {
+        "match": "netuitive.collectd.cpu-avg.*.percent",
+        "properties": {
+          "validMax": 100
+        }
+      },
+      {
+        "match": "netuitive.collectd.disk-.*\\.disk_busy.percent",
+        "properties": {
+          "validMax": 100
+        }
+      },
+      {
+        "match": "netuitive.collectd.interface\\..*\\.percent",
+        "properties": {
+          "validMax": 100
+        }
+      },
+      {
+        "match": "netuitive.collectd.processes\\..*percent",
+        "properties": {
+          "validMax": 100
         }
       }
-    }, {
-      "match" : "netuitive.collectd.memory.utilizationpercent",
-      "properties" : {
-        "tags" : {
-          "utilization" : true
-        },
-        "validMax" : 100
-      }
-    }, {
-      "match" : "uptime.uptime.value",
-      "properties" : {
-        "STATISTIC" : "sum"
-      }
-    }, {
-      "match" : "netuitive.collectd.disk-*.disk_ops.total",
-      "properties" : {
-        "STATISTIC" : "sum"
-      }
-    }, {
-      "match" : "netuitive.collectd.cpu-avg.*.percent",
-      "properties" : {
-        "validMax" : 100
-      }
-    }, {
-      "match" : "netuitive.collectd.disk-.*\\.disk_busy.percent",
-      "properties" : {
-        "validMax" : 100
-      }
-    }, {
-      "match" : "netuitive.collectd.interface\\..*\\.percent",
-      "properties" : {
-        "validMax" : 100
-      }
-    }, {
-      "match" : "netuitive.collectd.processes\\..*percent",
-      "properties" : {
-        "validMax" : 100
-      }
-    } ]
+    ],
+    "name": "Collectd SERVER",
+    "scope": {
+      "elementType": "SERVER",
+      "metricMatches": "(^cpu|^memory)\\..*\\.value$"
+    },
+    "type": "METRIC_META"
   }
 }

@@ -1,42 +1,30 @@
 {
-  "policy" : {
-    "id" : null,
-    "name" : "Collectd - Elevated Percentage of Zombie Processes",
-    "description" : "Indicates a higher-than-normal percentage of zombie processes.",
-    "scope" : {
-      "elementName" : "",
-      "elementNameExclude" : null,
-      "fqnIncludes" : [ ],
-      "fqnExcludes" : [ ],
-      "elementType" : "SERVER",
-      "elementTags" : { }
-    },
-    "duration" : 1800,
-    "conditions" : [ {
-      "metric" : "netuitive.collectd.processes.zombiepercent",
-      "wildcard" : null,
-      "metricScopeTags" : { },
-      "analytic" : "baselineDeviation",
-      "operator" : ">",
-      "level" : null,
-      "level2" : null,
-      "metricThresholdLevel" : null,
-      "metricThresholdAnalytic" : null
-    } ],
-    "eventConditions" : [ ],
-    "actions" : [ {
-      "type" : "event",
-      "category" : 2
-    }, {
-      "type" : "notification",
-      "id" : 23513,
-      "enabled" : true
-    } ],
-    "enabled" : true,
-    "deleted" : false,
-    "originTenantId" : null,
-    "originPolicyId" : null,
-    "creatorEmail" : null,
-    "lastUpdated" : null
+  "policy": {
+    "actions": [
+      {
+        "category": 2,
+        "type": "event"
+      },
+      {
+        "enabled": true,
+        "id": 23513,
+        "type": "notification"
+      }
+    ],
+    "conditions": [
+      {
+        "analytic": "baselineDeviation",
+        "metric": "netuitive.collectd.processes.zombiepercent",
+        "operator": ">"
+      }
+    ],
+    "deleted": false,
+    "description": "Indicates a higher-than-normal percentage of zombie processes.",
+    "duration": 1800,
+    "enabled": true,
+    "name": "Collectd - Elevated Percentage of Zombie Processes",
+    "scope": {
+      "elementType": "SERVER"
+    }
   }
 }

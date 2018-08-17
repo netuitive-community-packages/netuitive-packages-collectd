@@ -1,130 +1,145 @@
 {
-  "analyticConfiguration" : {
-    "tenantId" : null,
-    "type" : "ACE",
-    "id" : null,
-    "packageId" : null,
-    "name" : "Collectd SERVER",
-    "scope" : {
-      "elementName" : null,
-      "elementType" : "SERVER",
-      "elementTags" : null,
-      "metricMatches" : "(^cpu|^memory)\\..*\\.value$"
+  "analyticConfiguration": {
+    "metrics": [
+      {
+        "match": "cpu.cpu-idle.value",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "cpu.cpu-system.value",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "cpu.cpu-user.value",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "cpu.cpu-wait.value",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "memory.memory-buffered.value",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "memory.memory-cached.value",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "memory.memory-free.value",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "memory-used.value",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "netuitive.collectd.cpu-avg.cpu-(.*).percent",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "netuitive.collectd.cpu-avg.cpu-idle.percent",
+        "properties": {
+          "baseline": true,
+          "correlation": false
+        }
+      },
+      {
+        "match": "netuitive.collectd.df.(.*)",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "netuitive.collectd.memory.utilizationpercent",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "load.load.midterm",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "netuitive.collectd.disk(.*)",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "netuitive.collectd.disk(.*).disk_time.readwrite",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "netuitive.collectd.disk(.*).disk_ops.readwrite",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "netuitive.collectd.disk(.*).disk_ops.total",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "netuitive.collectd.interface(.*).if_packets.total",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "netuitive.collectd.interface(.*).if_errors.percent",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      }
+    ],
+    "name": "Collectd SERVER",
+    "scope": {
+      "elementType": "SERVER",
+      "metricMatches": "(^cpu|^memory)\\..*\\.value$"
     },
-    "metrics" : [ {
-      "match" : "cpu.cpu-idle.value",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "cpu.cpu-system.value",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "cpu.cpu-user.value",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "cpu.cpu-wait.value",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "memory.memory-buffered.value",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "memory.memory-cached.value",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "memory.memory-free.value",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "memory-used.value",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "netuitive.collectd.cpu-avg.cpu-(.*).percent",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "netuitive.collectd.cpu-avg.cpu-idle.percent",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : false
-      }
-    }, {
-      "match" : "netuitive.collectd.df.(.*)",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "netuitive.collectd.memory.utilizationpercent",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "load.load.midterm",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "netuitive.collectd.disk(.*)",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "netuitive.collectd.disk(.*).disk_time.readwrite",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "netuitive.collectd.disk(.*).disk_ops.readwrite",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "netuitive.collectd.disk(.*).disk_ops.total",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "netuitive.collectd.interface(.*).if_packets.total",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "netuitive.collectd.interface(.*).if_errors.percent",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    } ]
+    "type": "ACE"
   }
 }
