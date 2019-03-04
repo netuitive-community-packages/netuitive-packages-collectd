@@ -15,21 +15,3 @@ The following are the Collectd plugins that we assume Netuitive customers will u
 Additional plugins may be enabled; policies and configurations for those plugins will be packaged separately as they become available.
 
 For detailed information on this package, please refer to the [online documentation](https://help.netuitive.com/Content/Integrations/collectd.htm).
-
-## Release History
-
-### Version next
-
-* Adjusted build to use metricly-cli for validation
-
-### Version 1.1.1
-
-* Updated package compatibilities.
-
-### Version 1.1.0
-
-* Removed utilization tag from individual disk metrics.
-
-### Version 1.0.0
-
-* Initial production release of the package for monitoring OS metrics from Collectd.
