@@ -4,7 +4,9 @@
       {
         "match": "netuitive.collectd.memory.total",
         "properties": {
-          "expression": "data['memory.memory-buffered.value'].actual + data['memory.memory-cached.value'].actual + data['memory.memory-free.value'].actual + data['memory.memory-used.value'].actual",
+          "expressions": [
+            "${memory.memory-buffered.value}.actual + ${memory.memory-cached.value}.actual + ${memory.memory-free.value}.actual + ${memory.memory-used.value}.actual"
+          ],
           "fqn": "netuitive.collectd.memory.total",
           "name": "Total Memory"
         }
@@ -12,7 +14,9 @@
       {
         "match": "netuitive.collectd.memory.utilizationpercent",
         "properties": {
-          "expression": "100 - (data['memory.memory-buffered.value'].actual + data['memory.memory-cached.value'].actual + data['memory.memory-free.value'].actual) / data['netuitive.collectd.memory.total'].actual * 100",
+          "expressions": [
+            "100 - (${memory.memory-buffered.value}.actual + ${memory.memory-cached.value}.actual + ${memory.memory-free.value}.actual) / ${netuitive.collectd.memory.total}.actual * 100"
+          ],
           "fqn": "netuitive.collectd.memory.utilizationpercent",
           "name": "Memory Utilization Percent"
         }
@@ -20,7 +24,9 @@
       {
         "match": "netuitive.collectd.processes.total",
         "properties": {
-          "expression": "data['processes.ps_state-blocked.value'].actual + data['processes.ps_state-paging.value'].actual + data['processes.ps_state-running.value'].actual + data['processes.ps_state-sleeping.value'].actual + data['processes.ps_state-stopped.value'].actual + data['processes.ps_state-zombies.value'].actual",
+          "expressions": [
+            "${processes.ps_state-blocked.value}.actual + ${processes.ps_state-paging.value}.actual + ${processes.ps_state-running.value}.actual + ${processes.ps_state-sleeping.value}.actual + ${processes.ps_state-stopped.value}.actual + ${processes.ps_state-zombies.value}.actual"
+          ],
           "fqn": "netuitive.collectd.processes.total",
           "name": "Total Processes"
         }
@@ -28,7 +34,9 @@
       {
         "match": "netuitive.collectd.processes.blockedpercent",
         "properties": {
-          "expression": "(data['processes.ps_state-blocked.value'].actual / data['netuitive.collectd.processes.total'].actual) * 100",
+          "expressions": [
+            "(${processes.ps_state-blocked.value}.actual / ${netuitive.collectd.processes.total}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.processes.blockedpercent",
           "name": "Blocked Processes Percent"
         }
@@ -36,7 +44,9 @@
       {
         "match": "netuitive.collectd.processes.pagingpercent",
         "properties": {
-          "expression": "(data['processes.ps_state-paging.value'].actual / data['netuitive.collectd.processes.total'].actual) * 100",
+          "expressions": [
+            "(${processes.ps_state-paging.value}.actual / ${netuitive.collectd.processes.total}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.processes.pagingpercent",
           "name": "Paging Processes Percent"
         }
@@ -44,7 +54,9 @@
       {
         "match": "netuitive.collectd.processes.runningpercent",
         "properties": {
-          "expression": "(data['processes.ps_state-running.value'].actual / data['netuitive.collectd.processes.total'].actual) * 100",
+          "expressions": [
+            "(${processes.ps_state-running.value}.actual / ${netuitive.collectd.processes.total}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.processes.runningpercent",
           "name": "Running Processes Percent"
         }
@@ -52,7 +64,9 @@
       {
         "match": "netuitive.collectd.processes.sleepingpercent",
         "properties": {
-          "expression": "(data['processes.ps_state-sleeping.value'].actual / data['netuitive.collectd.processes.total'].actual) * 100",
+          "expressions": [
+            "(${processes.ps_state-sleeping.value}.actual / ${netuitive.collectd.processes.total}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.processes.sleepingpercent",
           "name": "Sleeping Processes Percent"
         }
@@ -60,7 +74,9 @@
       {
         "match": "netuitive.collectd.processes.stoppedpercent",
         "properties": {
-          "expression": "(data['processes.ps_state-blocked.value'].actual / data['netuitive.collectd.processes.total'].actual) * 100",
+          "expressions": [
+            "(${processes.ps_state-blocked.value}.actual / ${netuitive.collectd.processes.total}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.processes.stoppedpercent",
           "name": "Stopped Processes Percent"
         }
@@ -68,7 +84,9 @@
       {
         "match": "netuitive.collectd.processes.zombiepercent",
         "properties": {
-          "expression": "(data['processes.ps_state-zombies.value'].actual / data['netuitive.collectd.processes.total'].actual) * 100",
+          "expressions": [
+            "(${processes.ps_state-zombies.value}.actual / ${netuitive.collectd.processes.total}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.processes.zombiepercent",
           "name": "Zombie Processes Percent"
         }
@@ -76,206 +94,262 @@
       {
         "match": "netuitive.collectd.cpu-avg.cpu-idle",
         "properties": {
-          "expression": "data.avg('cpu-.*.cpu-idle.value')",
+          "expressions": [
+            "avg(cpu-.*.cpu-idle.value)"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-idle"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-interrupt",
         "properties": {
-          "expression": "data.avg('cpu-.*.cpu-interrupt.value')",
+          "expressions": [
+            "avg(cpu-.*.cpu-interrupt.value)"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-interrupt"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-nice",
         "properties": {
-          "expression": "data.avg('cpu-.*.cpu-nice.value')",
+          "expressions": [
+            "avg(cpu-.*.cpu-nice.value)"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-nice"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-softirq",
         "properties": {
-          "expression": "data.avg('cpu-.*.cpu-softirq.value')",
+          "expressions": [
+            "avg(cpu-.*.cpu-softirq.value)"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-softirq"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-steal",
         "properties": {
-          "expression": "data.avg('cpu-.*.cpu-steal.value')",
+          "expressions": [
+            "avg(cpu-.*.cpu-steal.value)"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-steal"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-system",
         "properties": {
-          "expression": "data.avg('cpu-.*.cpu-system.value')",
+          "expressions": [
+            "avg(cpu-.*.cpu-system.value)"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-system"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-user",
         "properties": {
-          "expression": "data.avg('cpu-.*.cpu-user.value')",
+          "expressions": [
+            "avg(cpu-.*.cpu-user.value)"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-user"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-wait",
         "properties": {
-          "expression": "data.avg('cpu-.*.cpu-wait.value')",
+          "expressions": [
+            "avg(cpu-.*.cpu-wait.value)"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-wait"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.total-jiffies",
         "properties": {
-          "expression": "data['netuitive.collectd.cpu-avg.cpu-idle'].actual + data['netuitive.collectd.cpu-avg.cpu-interrupt'].actual + data['netuitive.collectd.cpu-avg.cpu-nice'].actual + data['netuitive.collectd.cpu-avg.cpu-softirq'].actual + data['netuitive.collectd.cpu-avg.cpu-steal'].actual + data['netuitive.collectd.cpu-avg.cpu-system'].actual + data['netuitive.collectd.cpu-avg.cpu-user'].actual + data['netuitive.collectd.cpu-avg.cpu-wait'].actual",
+          "expressions": [
+            "${netuitive.collectd.cpu-avg.cpu-idle}.actual + ${netuitive.collectd.cpu-avg.cpu-interrupt}.actual + ${netuitive.collectd.cpu-avg.cpu-nice}.actual + ${netuitive.collectd.cpu-avg.cpu-softirq}.actual + ${netuitive.collectd.cpu-avg.cpu-steal}.actual + ${netuitive.collectd.cpu-avg.cpu-system}.actual + ${netuitive.collectd.cpu-avg.cpu-user}.actual + ${netuitive.collectd.cpu-avg.cpu-wait}.actual"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.total-jiffies"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-idle.percent",
         "properties": {
-          "expression": "(data['netuitive.collectd.cpu-avg.cpu-idle'].actual / data['netuitive.collectd.cpu-avg.total-jiffies'].actual) * 100",
+          "expressions": [
+            "(${netuitive.collectd.cpu-avg.cpu-idle}.actual / ${netuitive.collectd.cpu-avg.total-jiffies}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-idle.percent"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-interrupt.percent",
         "properties": {
-          "expression": "(data['netuitive.collectd.cpu-avg.cpu-interrupt'].actual / data['netuitive.collectd.cpu-avg.total-jiffies'].actual) * 100",
+          "expressions": [
+            "(${netuitive.collectd.cpu-avg.cpu-interrupt}.actual / ${netuitive.collectd.cpu-avg.total-jiffies}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-interrupt.percent"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-nice.percent",
         "properties": {
-          "expression": "(data['netuitive.collectd.cpu-avg.cpu-nice'].actual / data['netuitive.collectd.cpu-avg.total-jiffies'].actual) * 100",
+          "expressions": [
+            "(${netuitive.collectd.cpu-avg.cpu-nice}.actual / ${netuitive.collectd.cpu-avg.total-jiffies}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-nice.percent"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-softirq.percent",
         "properties": {
-          "expression": "(data['netuitive.collectd.cpu-avg.cpu-softirq'].actual / data['netuitive.collectd.cpu-avg.total-jiffies'].actual) * 100",
+          "expressions": [
+            "(${netuitive.collectd.cpu-avg.cpu-softirq}.actual / ${netuitive.collectd.cpu-avg.total-jiffies}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-softirq.percent"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-steal.percent",
         "properties": {
-          "expression": "(data['netuitive.collectd.cpu-avg.cpu-steal'].actual / data['netuitive.collectd.cpu-avg.total-jiffies'].actual) * 100",
+          "expressions": [
+            "(${netuitive.collectd.cpu-avg.cpu-steal}.actual / ${netuitive.collectd.cpu-avg.total-jiffies}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-steal.percent"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-system.percent",
         "properties": {
-          "expression": "(data['netuitive.collectd.cpu-avg.cpu-system'].actual / data['netuitive.collectd.cpu-avg.total-jiffies'].actual) * 100",
+          "expressions": [
+            "(${netuitive.collectd.cpu-avg.cpu-system}.actual / ${netuitive.collectd.cpu-avg.total-jiffies}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-system.percent"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-user.percent",
         "properties": {
-          "expression": "(data['netuitive.collectd.cpu-avg.cpu-user'].actual / data['netuitive.collectd.cpu-avg.total-jiffies'].actual) * 100",
+          "expressions": [
+            "(${netuitive.collectd.cpu-avg.cpu-user}.actual / ${netuitive.collectd.cpu-avg.total-jiffies}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-user.percent"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-wait.percent",
         "properties": {
-          "expression": "(data['netuitive.collectd.cpu-avg.cpu-wait'].actual / data['netuitive.collectd.cpu-avg.total-jiffies'].actual) * 100",
+          "expressions": [
+            "(${netuitive.collectd.cpu-avg.cpu-wait}.actual / ${netuitive.collectd.cpu-avg.total-jiffies}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-wait.percent"
         }
       },
       {
         "match": "netuitive.collectd.cpu-avg.cpu-total-utilization.percent",
         "properties": {
-          "expression": "100 - data['netuitive.collectd.cpu-avg.cpu-idle.percent'].actual",
+          "expressions": [
+            "100 - ${netuitive.collectd.cpu-avg.cpu-idle.percent}.actual"
+          ],
           "fqn": "netuitive.collectd.cpu-avg.cpu-total-utilization.percent"
         }
       },
       {
         "match": "netuitive.collectd.df.total-space",
         "properties": {
-          "expression": "data['df-${1}.df_complex-free.value'].actual + data['df-${1}.df_complex-reserved.value'].actual + data['df-${1}.df_complex-used.value'].actual",
-          "for": "df-(.*).df_complex-free",
+          "capture": "df-(.*).df_complex-free",
+          "expressions": [
+            "${df-${1}.df_complex-free.value}.actual + ${df-${1}.df_complex-reserved.value}.actual + ${df-${1}.df_complex-used.value}.actual"
+          ],
           "fqn": "netuitive.collectd.df-${1}.total-space"
         }
       },
       {
         "match": "netuitive.collectd.df.used-percent",
         "properties": {
-          "expression": "(data['df-${1}.df_complex-used.value'].actual / data['netuitive.collectd.df-${1}.total-space'].actual) * 100",
-          "for": "df-(.*).df_complex-used",
+          "capture": "df-(.*).df_complex-used",
+          "expressions": [
+            "(${df-${1}.df_complex-used.value}.actual / ${netuitive.collectd.df-${1}.total-space}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.df-${1}.used-percent"
         }
       },
       {
         "match": "netuitive.collectd.disk.disk_ops.readwrite",
         "properties": {
-          "expression": "data['disk-${1}.disk_ops.read'].actual + data['disk-${1}.disk_ops.write'].actual",
-          "for": "disk-(.*).disk_ops.read",
+          "capture": "disk-(.*).disk_ops.read",
+          "expressions": [
+            "${disk-${1}.disk_ops.read}.actual + ${disk-${1}.disk_ops.write}.actual"
+          ],
           "fqn": "netuitive.collectd.disk-${1}.disk_ops.readwrite"
         }
       },
       {
         "match": "netuitive.collectd.disk.disk_time.readwrite",
         "properties": {
-          "expression": "((data['disk-${1}.disk_time.read'].actual * (data['disk-${1}.disk_ops.read'].actual * 300)) + (data['disk-${1}.disk_time.write'].actual * (data['disk-${1}.disk_ops.write'].actual * 300))) / data['netuitive.collectd.disk-${1}.disk_ops.total'].actual",
-          "for": "disk-(.*).disk_time.read",
+          "capture": "disk-(.*).disk_time.read",
+          "expressions": [
+            "((${disk-${1}.disk_time.read}.actual * (${disk-${1}.disk_ops.read}.actual * 300)) + (${disk-${1}.disk_time.write}.actual * (${disk-${1}.disk_ops.write}.actual * 300))) / ${netuitive.collectd.disk-${1}.disk_ops.total}.actual"
+          ],
           "fqn": "netuitive.collectd.disk-${1}.disk_time.readwrite"
         }
       },
       {
         "match": "netuitive.collectd.disk.disk_busy.percent",
         "properties": {
-          "expression": "(((data['disk-${1}.disk_ops.read'].actual * 300 * data['disk-${1}.disk_time.read'].actual) + (data['disk-${1}.disk_ops.write'].actual * 300 * data['disk-${1}.disk_time.write'].actual)) / (300000)) * 100",
-          "for": "disk-(.*).disk_ops.read",
+          "capture": "disk-(.*).disk_ops.read",
+          "expressions": [
+            "(((${disk-${1}.disk_ops.read}.actual * 300 * ${disk-${1}.disk_time.read}.actual) + (${disk-${1}.disk_ops.write}.actual * 300 * ${disk-${1}.disk_time.write}.actual)) / (300000)) * 100"
+          ],
           "fqn": "netuitive.collectd.disk-${1}.disk_busy.percent"
         }
       },
       {
         "match": "netuitive.collectd.disk.disk_ops.total",
         "properties": {
-          "expression": "(data['disk-${1}.disk_ops.read'].actual + data['disk-${1}.disk_ops.write'].actual) * 300",
-          "for": "disk-(.*).disk_ops.read",
+          "capture": "disk-(.*).disk_ops.read",
+          "expressions": [
+            "(${disk-${1}.disk_ops.read}.actual + ${disk-${1}.disk_ops.write}.actual) * 300"
+          ],
           "fqn": "netuitive.collectd.disk-${1}.disk_ops.total"
         }
       },
       {
         "match": "netuitive.collectd.interface.if_errors.total",
         "properties": {
-          "expression": "(data['interface-${1}.if_errors.tx'].actual + data['interface-${1}.if_errors.rx'].actual)",
-          "for": "interface-(.*).if_errors.tx",
+          "capture": "interface-(.*).if_errors.tx",
+          "expressions": [
+            "(${interface-${1}.if_errors.tx}.actual + ${interface-${1}.if_errors.rx}.actual)"
+          ],
           "fqn": "netuitive.collectd.interface-${1}.if_errors.total"
         }
       },
       {
         "match": "netuitive.collectd.interface.if_octets.total",
         "properties": {
-          "expression": "(data['interface-${1}.if_octets.tx'].actual + data['interface-${1}.if_octets.rx'].actual)",
-          "for": "interface-(.*).if_octets.tx",
+          "capture": "interface-(.*).if_octets.tx",
+          "expressions": [
+            "(${interface-${1}.if_octets.tx}.actual + ${interface-${1}.if_octets.rx}.actual)"
+          ],
           "fqn": "netuitive.collectd.interface-${1}.if_octets.total"
         }
       },
       {
         "match": "netuitive.collectd.interface.if_packets.total",
         "properties": {
-          "expression": "(data['interface-${1}.if_packets.tx'].actual + data['interface-${1}.if_packets.rx'].actual)",
-          "for": "interface-(.*).if_packets.tx",
+          "capture": "interface-(.*).if_packets.tx",
+          "expressions": [
+            "(${interface-${1}.if_packets.tx}.actual + ${interface-${1}.if_packets.rx}.actual)"
+          ],
           "fqn": "netuitive.collectd.interface-${1}.if_packets.total"
         }
       },
       {
         "match": "netuitive.collectd.interface.if_errors.percent",
         "properties": {
-          "expression": "(data['netuitive.collectd.interface-${1}.if_errors.total'].actual / data['netuitive.collectd.interface-${1}.if_packets.total'].actual) * 100",
-          "for": "interface-(.*).if_errors.tx",
+          "capture": "interface-(.*).if_errors.tx",
+          "expressions": [
+            "(${netuitive.collectd.interface-${1}.if_errors.total}.actual / ${netuitive.collectd.interface-${1}.if_packets.total}.actual) * 100"
+          ],
           "fqn": "netuitive.collectd.interface-${1}.if_errors.percent"
         }
       }
