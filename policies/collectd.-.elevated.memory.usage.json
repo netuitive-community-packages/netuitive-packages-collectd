@@ -30,7 +30,9 @@
     "enabled": true,
     "name": "Collectd - Elevated Memory Usage",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

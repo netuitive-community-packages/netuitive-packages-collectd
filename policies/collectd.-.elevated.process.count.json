@@ -24,7 +24,9 @@
     "enabled": true,
     "name": "Collectd - Elevated Process Count",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

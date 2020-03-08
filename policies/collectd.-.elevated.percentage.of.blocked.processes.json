@@ -24,7 +24,9 @@
     "enabled": true,
     "name": "Collectd - Elevated Percentage of Blocked Processes",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

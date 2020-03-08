@@ -24,7 +24,9 @@
     "enabled": true,
     "name": "Collectd - Elevated Percentage of Zombie Processes",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }
