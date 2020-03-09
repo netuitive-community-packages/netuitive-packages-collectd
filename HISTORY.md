@@ -1,9 +1,11 @@
 ## Release History
 
+
 ### Version next
 
 * Convert computed metrics to new format
 * Adjusted build to use metricly-cli for validation
+* Convert single elementType to elementTypes array in policy scope
 
 ### Version 1.1.1
 
