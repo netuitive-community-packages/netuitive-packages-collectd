@@ -1,5 +1,6 @@
 ## Release History
 
+
 ### Version next
 
 * Convert computed metrics to new format
