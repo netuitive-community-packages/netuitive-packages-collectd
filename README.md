@@ -14,4 +14,4 @@ The following are the Collectd plugins that we assume Netuitive customers will u
 
 Additional plugins may be enabled; policies and configurations for those plugins will be packaged separately as they become available.
 
-For detailed information on this package, please refer to the [online documentation](https://help.netuitive.com/Content/Integrations/collectd.htm).
+For detailed information on this package, please refer to the [online documentation](https://docs.virtana.com/en/collectd.html).
