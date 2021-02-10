@@ -1,4 +1,4 @@
-# netuitive.packages.collectd 1.1.1
+# CloudWisdom.packages.collectd 1.1.1
 
 **Default Plugins**
 The following are the Collectd plugins that we assume Netuitive customers will use by default.
